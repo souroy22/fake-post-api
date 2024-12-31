@@ -38,7 +38,7 @@ app.get("/posts", (req, res) => {
 app.get("/posts/:id", (req, res) => {
   try {
     const { id } = req.params;
-    const post = staticPosts.find((data) => data.id === id);
+    const post = staticPosts.find((data) => data.id === parseInt(id));
     return res.status(200).json(post);
   } catch (error) {
     console.log(error.message);
